@@ -16,13 +16,24 @@ for line in lines:
 # Print the results
 current_number = 50
 zero_count = 0
+part2_count =0
 for direction, number in split_lines:
     number = int(number)  # Convert string to integer
     if direction == "R":
-        current_number = (current_number + number) % 100
+        part2_count +=(current_number + number) // 100
+        next_number = (current_number + number) % 100        
+        if next_number==0 and number > 0:
+            part2_count -= 1
+        current_number = next_number
     elif direction == "L":
+        part2_count -= ((current_number - number) // 100)
+        if current_number ==0 and number > 0:
+            part2_count -= 1
         current_number = (current_number - number) % 100
+
     if current_number == 0:
-        zero_count += 1
+        zero_count  += 1
+        part2_count += 1
 print(f"Number of zeros: {zero_count}")
+print(f"Part 2 Number of zeros: {part2_count}")
 
