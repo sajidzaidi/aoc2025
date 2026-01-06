@@ -7,11 +7,21 @@ name = "aoc"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "interval" },
     { name = "numpy" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "numpy", specifier = ">=2.4.0" }]
+requires-dist = [
+    { name = "interval", specifier = ">=1.0.0" },
+    { name = "numpy", specifier = ">=2.4.0" },
+]
+
+[[package]]
+name = "interval"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/b3/2d/b337afbd232ea1ea9c38401135054bf763e7930ea5e2e49bc39af35c3443/interval-1.0.0.tar.bz2", hash = "sha256:6619937f3fcb5cf85bb3a60b4e4391664e8d7b30ae3dc4d04c3fc1d063ff1c3b", size = 11621, upload-time = "2005-11-10T05:48:38Z" }
 
 [[package]]
 name = "numpy"
